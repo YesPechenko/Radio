@@ -55,8 +55,8 @@ class RadioTest {
 
     @Test
     void shouldSetVolumeOutOfRange() {
-        radio.setCurrentVolume(15);
-        assertEquals(10, radio.getCurrentVolume());
+        radio.setCurrentVolume(255);
+        assertEquals(100, radio.getCurrentVolume());
     }
 
     @Test
@@ -91,7 +91,5 @@ class RadioTest {
         radio.minusVolume();
         assertEquals(0, radio.getCurrentVolume());
     }
-
-
 
 }
