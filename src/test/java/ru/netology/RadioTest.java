@@ -7,10 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class RadioTest {
     Radio radio = new Radio();
     @Test
-    void shouldSetStationAndVolumeWithinRange() {
-        Radio radio = new Radio(5, 8);
+    void shouldSetStationWithinRange() {
+        radio.setCurrentRadioStation(5);
         assertEquals(5, radio.getCurrentRadioStation());
-        assertEquals(8, radio.getCurrentVolume());
     }
 
     @Test
@@ -53,6 +52,11 @@ class RadioTest {
         assertEquals(9, radio.getCurrentRadioStation());
     }
 
+    void shouldSetVolumeWithinRange() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(8);
+        assertEquals(8, radio.getCurrentVolume());
+    }
     @Test
     void shouldSetVolumeOutOfRange() {
         radio.setCurrentVolume(255);
